@@ -1,6 +1,6 @@
 ***
 
-# 의료보험료 예측을 위한 머신러닝 모델 설계 프로젝트
+# [2024.06] Designing a machine learning model to predict healthcare premiums
 
 본 프로젝트는 Kaggle Competition에서 사용된 데이터셋을 이용하여 진행되었다.
 > https://www.kaggle.com/datasets/tejashvi14/medical-insurance-premium-prediction
@@ -9,16 +9,16 @@
 
 ### 목차
 
-+ [I. 프로젝트 개요](https://github.com/jijeongwon/AI_project/blob/main/README.md#i-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B0%9C%EC%9A%94)
-+ [II. 데이터 특징 공학](https://github.com/jijeongwon/AI_project/blob/main/README.md#ii-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%8A%B9%EC%A7%95-%EA%B3%B5%ED%95%99)
-+ [III. 모델 설명](https://github.com/jijeongwon/AI_project/blob/main/README.md#iii-%EB%AA%A8%EB%8D%B8-%EC%84%A4%EB%AA%85)
-+ [IV. 실험 결과](https://github.com/jijeongwon/AI_project/blob/main/README.md#iv-%EC%8B%A4%ED%97%98-%EA%B2%B0%EA%B3%BC)
-+ [V. Flask 구축](https://github.com/jijeongwon/AI_project/blob/main/README.md#v-flask-%EA%B5%AC%EC%B6%95)
-+ [VI. 추후 개선 사항](https://github.com/jijeongwon/AI_project/blob/main/README.md#vi-%EC%B6%94%ED%9B%84-%EA%B0%9C%EC%84%A0-%EC%82%AC%ED%95%AD-%ED%95%9C%EA%B3%84%EC%A0%90)
++ [I. Project Summary](https://github.com/jijeongwon/AI_project/blob/main/README.md#i-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B0%9C%EC%9A%94)
++ [II. Data Feature Engineering](https://github.com/jijeongwon/AI_project/blob/main/README.md#ii-%EB%8D%B0%EC%9D%B4%ED%84%B0-%ED%8A%B9%EC%A7%95-%EA%B3%B5%ED%95%99)
++ [III. Model Explanation](https://github.com/jijeongwon/AI_project/blob/main/README.md#iii-%EB%AA%A8%EB%8D%B8-%EC%84%A4%EB%AA%85)
++ [IV. Experiment Result](https://github.com/jijeongwon/AI_project/blob/main/README.md#iv-%EC%8B%A4%ED%97%98-%EA%B2%B0%EA%B3%BC)
++ [V. Flask Design](https://github.com/jijeongwon/AI_project/blob/main/README.md#v-flask-%EA%B5%AC%EC%B6%95)
++ [VI. Future Improvements](https://github.com/jijeongwon/AI_project/blob/main/README.md#vi-%EC%B6%94%ED%9B%84-%EA%B0%9C%EC%84%A0-%EC%82%AC%ED%95%AD-%ED%95%9C%EA%B3%84%EC%A0%90)
 
 ***
 
-## I. 프로젝트 개요
+## I. Project Summary
 
    #### 1. 프로젝트 배경 및 목적
 
@@ -54,7 +54,7 @@ Train data 개수 : 788, Test data 개수 : 198 로 나누어주었다.
 
 ***
 
-## II. 데이터 특징 공학
+## II. Data Feature Engineering
 
    #### 1. 원본 데이터셋을 살펴봤을 때 data 모두 이진화가 완료되어 있었기 때문에 따로 진행하지 않았지만, 기존보다 더 나은 결과를 얻기 위해 Data Synthesis를 진행하여 feature 수를 늘렸다.
 
@@ -70,7 +70,7 @@ Train data 개수 : 788, Test data 개수 : 198 로 나누어주었다.
 
 ***
 
-## III. 모델 설명
+## III. Model Explanation
 
 1. 머신러닝 모델 : 다양한 모델링 기법을 사용하며 성능을 개선하기 위해 비교해 보았다. 다음은 여러 모델(LR, DT, MLP, Ada, ...) 중 성능이 가장 높았던 세 가지를 순서대로 나열한 것이다.
 
@@ -121,13 +121,13 @@ Train data 개수 : 788, Test data 개수 : 198 로 나누어주었다.
 
 ***
 
-## IV. 실험 결과
+## IV. Experiment Result
 
 + **다음은 Random Forest 모델을 사용하여 Ablation Study를 진행한 표이다. (Synthesis data 생성 전)** 
 
 <img width="60%" src="https://github.com/jijeongwon/AI_project/assets/144203449/af30cf35-48dc-4fde-ab67-81031d9372eb"/>
 
-[III. 모델 설명](https://github.com/jijeongwon/AI_project/blob/main/README.md#iii-%EB%AA%A8%EB%8D%B8-%EC%84%A4%EB%AA%85) 에서도 언급했듯이, 평가 지표는 **R-Squared**를 사용하였고, Loss는 **MAE**를 사용하였다.
+[III. Model Explanation](https://github.com/jijeongwon/AI_project/blob/main/README.md#iii-%EB%AA%A8%EB%8D%B8-%EC%84%A4%EB%AA%85) 에서도 언급했듯이, 평가 지표는 **R-Squared**를 사용하였고, Loss는 **MAE**를 사용하였다.
 
 표를 보면, 실험 3에서 가장 높은 성능을 얻은 것을 알 수 있다. 하이퍼파라미터는 각각 max_depth=15, n_estimators=50, min_samples_leaf=2, min_samples_split=4로 조정했다.
 
@@ -167,7 +167,7 @@ Train data 개수 : 788, Test data 개수 : 198 로 나누어주었다.
 
 ***
 
-## V. Flask 구축
+## V. Flask Design
 
 + 모델링을 마친 후, 마지막으로 Flask 웹 페이지를 구축해보았다. 직접 설계한 머신러닝 모델을 연동한 웹페이지를 만들어 그곳에 자신의 건강 정보를 입력하면, 별도의 코드를 짜는 것 없이 바로 웹페이지에서 자신의 의료보험료를 확인할 수 있게 된다.
 
@@ -176,7 +176,7 @@ Train data 개수 : 788, Test data 개수 : 198 로 나누어주었다.
 
 ***
 
-## VI. 추후 개선 사항, 한계점
+## VI. Future Improvements, Limitations
 
 1. 데이터의 갯수가 약 1000개로 적은 양이기 때문에 Overfitting은 일어나지 않았지만, 더욱 심도있는 데이터 분석을 하기에는 한계가 있다.
 
