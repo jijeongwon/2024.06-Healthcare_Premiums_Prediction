@@ -1,6 +1,6 @@
 ***
 
-# Designing a machine learning model to predict healthcare premiums
+# healthcare premiums prediction
 
 본 프로젝트는 Kaggle Competition에서 사용된 데이터셋을 이용하여 진행되었다.
 > https://www.kaggle.com/datasets/tejashvi14/medical-insurance-premium-prediction
